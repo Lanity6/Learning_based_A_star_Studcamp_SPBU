@@ -111,42 +111,6 @@ class Autoencoder(pl.LightningModule):
             optimizer, max_lr=4e-4, total_steps=self.trainer.estimated_stepping_batches
         )
         return [optimizer], [scheduler]
-    
-
-class DemAutoencoder(Autoencoder):
-    def __init__(self, 
-                in_channels=5, 
-                out_channels=2, 
-                hidden_channels=64,
-                attn_blocks=6,
-                attn_heads=4,
-                cnn_dropout=0.15,
-                attn_dropout=0.15,
-                downsample_steps=3, 
-                resolution=(128, 128),
-                *args,
-                **kwargs):
-        super().__init__(in_channels, 
-                out_channels, 
-                hidden_channels,
-                attn_blocks,
-                attn_heads,
-                cnn_dropout,
-                attn_dropout,
-                downsample_steps, 
-                resolution)
-        self.recon_criterion = nn.MSELoss()
-
-    def step(self, batch, batch_idx, regime):
-        dem, rgb, sg, focal = batch
-        inputs = torch.cat([rgb, sg], dim=1)
-        gt_outputs = torch.cat([dem, focal], dim=1)
-        outputs = (self(inputs) + 1) / 2
-
-        loss = self.recon_criterion(outputs, gt_outputs)
-        self.log(f'{regime}_recon_loss', loss, on_step=False, on_epoch=True)
-        return loss
-
 
     
 class PathLogger(pl.Callback):
@@ -174,24 +138,3 @@ class PathLogger(pl.Callback):
             'predictions': [wandb.Image(x) for x in torch.cat([val_samples, prediction], dim=1)]
         })
 
-class DemPathLogger(pl.Callback):
-    def __init__(self, val_batch, num_samples=20):
-        super().__init__()
-        dem, rgb, sg, focal = val_batch[:num_samples]
-        inputs = torch.cat([rgb, sg], dim=1)
-        self.val_samples = inputs[:num_samples]
-        self.hm = torch.cat([dem, focal], dim=1)[:num_samples]
-
-    def on_validation_epoch_end(self, trainer, pl_module):
-        val_samples = self.val_samples.to(device=pl_module.device)
-        prediction = (pl_module(val_samples) + 1) / 2
-
-        # log images, gt_dems, start/goals and predictions
-        trainer.logger.experiment.log({
-            'rgb': [wandb.Image(x) for x in torch.unbind(val_samples[:, :3])],
-            'sg': [wandb.Image(x) for x in torch.unbind(val_samples[:, 3:])],
-            'dem': [wandb.Image(x) for x in torch.unbind(self.hm[:, :1])],
-            'focal': [wandb.Image(x) for x in torch.unbind(self.hm[:, 1:])],
-            'pred_dem': [wandb.Image(x) for x in torch.unbind(prediction[:, :1])],
-            'pred_focal': [wandb.Image(x) for x in torch.unbind(prediction[:, 1:])]
-        })
