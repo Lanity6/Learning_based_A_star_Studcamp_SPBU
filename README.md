@@ -1,12 +1,5 @@
 # Learning-based A*: How Deep Learning Neural Networks Can Improve Heuristic Search Algorithms
 
-## Authors
-
-Short information about the repository authors:
-
-* Rezchikov Daniil, 4th-year student in Mechatronics and Robotics (MIREA - Russian Technological University). Fields of interest: navigation systems in mobile robotics, machine/deep learning, multi-agent robotic systems, computer vision.
-* Ivanov Alexandr, 4th-year student in Mechatronics and Robotics (MIREA - Russian Technological University). Fields of interest: UAVs, machine/deep learning, control theory, computer vision.
-
 ## Project Goals
 
 During the project, the following tasks should be completed:
@@ -33,3 +26,10 @@ The project uses datasets consisting of different types of map environments:
 * Maps of **warehouse layouts**, for example the ones described in the [warehouse research dataset](http://example.com/warehouse-dataset).
 * Maps of **urban environments**, similar to those in the [city planning dataset](http://example.com/city-dataset).
 * A small custom dataset assembled from the TransPath_data dataset for validating hypotheses and preliminary experiments on a regular laptop
+
+## Authors
+
+Short information about the repository authors:
+
+* Rezchikov Daniil, 4th-year student in Mechatronics and Robotics (MIREA - Russian Technological University). Fields of interest: navigation systems in mobile robotics, machine/deep learning, multi-agent robotic systems, computer vision.
+* Ivanov Alexandr, 4th-year student in Mechatronics and Robotics (MIREA - Russian Technological University). Fields of interest: UAVs, machine/deep learning, control theory, computer vision.
