@@ -14,7 +14,7 @@ def main(mode, state_dict_path, hardness_limit=1.05):
     device = 'cuda'
     
     test_data = GridData(
-        path='./TransPath_data/test',
+        path='./Dataset_sanity_check/test',
         mode=mode
     )
     test_dataloader = DataLoader(test_data, batch_size=256,

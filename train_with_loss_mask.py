@@ -11,24 +11,13 @@ import torch
 import argparse
 import multiprocessing
 
-
-def build_loss_mask(maps, starts, goals, mode):
-    mask = torch.ones_like(maps)
-
-    mask *= (maps == 0)
-    mask *= (goals == 0)
-    if mode == "f":
-        mask *= (starts == 0)
-
-    return mask.float()
-
 def main(mode, run_name, proj_name, batch_size, max_epochs):
     train_data = GridData(
-        path='./TransPath_data/train',
+        path='./Dataset_sanity_check/train',
         mode=mode
     )
     val_data = GridData(
-        path='./TransPath_data/val',
+        path='./Dataset_sanity_check/val',
         mode=mode
     )
     resolution = (train_data.img_size, train_data.img_size)

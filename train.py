@@ -14,23 +14,23 @@ import multiprocessing
 
 def main(mode, run_name, proj_name, batch_size, max_epochs):
     train_data = GridData(
-        path='./TransPath_data/train',
+        path='./Dataset_sanity_check/train',
         mode=mode
     )
     val_data = GridData(
-        path='./TransPath_data/val',
+        path='./Dataset_sanity_check/val',
         mode=mode
     )
     resolution = (train_data.img_size, train_data.img_size)
     train_dataloader = DataLoader(  train_data,
                                     batch_size=batch_size,
                                     shuffle=True,
-                                    num_workers=multiprocessing.cpu_count(),
+                                    num_workers=6,
                                     pin_memory=True)
     val_dataloader = DataLoader(    val_data,
                                     batch_size=batch_size,
                                     shuffle=False,
-                                    num_workers=multiprocessing.cpu_count(),
+                                    num_workers=6,
                                     pin_memory=True)
 
     samples = next(iter(val_dataloader))

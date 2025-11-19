@@ -6,3 +6,4 @@ einops
 matplotlib
 wandb
 tqdm
+requests

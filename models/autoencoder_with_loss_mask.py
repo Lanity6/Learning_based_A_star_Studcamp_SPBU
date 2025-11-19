@@ -7,7 +7,7 @@ from modules.encoder import Encoder
 from modules.decoder import Decoder
 from modules.attention import SpatialTransformer
 from modules.pos_emb import PosEmbeds
-from train_with_loss_mask import build_loss_mask
+from utils.loss_mask import build_loss_mask
 
 
 def base_loss(criterion, na_outputs, va_outputs):
