@@ -17,7 +17,7 @@ def main(mode, state_dict_path, hardness_limit=1.05):
         path='./Dataset_sanity_check/test',
         mode=mode
     )
-    test_dataloader = DataLoader(test_data, batch_size=256,
+    test_dataloader = DataLoader(test_data, batch_size=1,
                         shuffle=False, num_workers=0, pin_memory=True)
     model = Autoencoder(mode=mode)
     model.load_state_dict(torch.load(state_dict_path))
