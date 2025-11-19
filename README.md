@@ -8,8 +8,7 @@ During the project, the following tasks should be completed:
 2. **Evaluate the developed approach** (1) on classical search algorithms such as D*, D* Lite, and Theta*.
 3. **Train neural networks** on datasets containing warehouse and city maps.
 4. **Replace RESNET blocks** with EfficientNet blocks and compare performance.
-5. **Replace the Transformer module** (2) with CCT, CVT, or ViT alternatives.
-6. **Compare results using the metrics** from the original paper and additionally compare execution time of algorithms (or their combinations with neural networks) with the classical A* algorithm. The time-based metric is measured in percentage relative to classic A*.
+5. **Compare results using the metrics** from the original paper and additionally compare execution time of algorithms (or their combinations with neural networks) with the classical A* algorithm. The time-based metric is measured in percentage relative to classic A*.
 
 ## References
 
@@ -25,7 +24,7 @@ The project uses datasets consisting of different types of map environments:
 
 * Maps of **warehouse layouts**, for example the ones described in the [warehouse research dataset](http://example.com/warehouse-dataset).
 * Maps of **urban environments**, similar to those in the [city planning dataset](http://example.com/city-dataset).
-* A small custom dataset assembled from the TransPath_data dataset for validating hypotheses and preliminary experiments on a regular laptop
+* A small custom dataset assembled from the TransPath_data dataset for to check the already written program code and preliminary experiments on a regular laptop
 
 ## Authors
 
