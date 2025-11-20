@@ -6,8 +6,7 @@ During the project, the following tasks should be completed:
 
 1. **Implement loss masking** by excluding pixels that correspond to obstacles, start points, or goal points.
 2. **Evaluate the developed approach** (1) on classical search algorithm such as Theta*.
-3. **Evaluate neural networks** on datasets containing warehouse and city maps.
-4. **Compare results using the metrics** from the original paper and additionally compare execution time of algorithms (or their combinations with neural networks) with the classical A* algorithm. The time-based metric is measured in percentage relative to classic A*.
+3. **Compare results using the metrics** from the original paper and additionally compare execution time of algorithms (or their combinations with neural networks) with the classical A* algorithm. The time-based metric is measured in percentage relative to classic A*.
 
 ## References
 
