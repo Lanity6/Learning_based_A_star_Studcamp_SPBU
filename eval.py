@@ -23,7 +23,7 @@ def main(mode, state_dict_path, hardness_limit=1.05):
         mode=mode
     )
     test_loader = DataLoader(
-        test_data, batch_size=128,
+        test_data, batch_size=256,
         shuffle=False, num_workers=0, pin_memory=True
     )
 
