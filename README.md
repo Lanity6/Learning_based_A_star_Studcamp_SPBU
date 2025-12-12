@@ -16,14 +16,6 @@ Three main research works relevant to the project:
 * **Article 2:** Hassani, Ali & Walton, Steven & Shah, Nikhil & Abuduweili, Abulikemu & Li, Jiachen & Shi, Humphrey. (2021). Escaping the Big Data Paradigm with Compact Transformers. 10.48550/arXiv.2104.05704. 
 * **Article 3:** Daniil Kirilenko, Anton Andreychuk, Aleksandr I. Panov, Konstantin Yakovlev, Generative models for grid-based and image-based pathfinding, Artificial Intelligence, Volume 338, 2025, 104238, ISSN 0004-3702, https://doi.org/10.1016/j.artint.2024.104238.
 
-## Datasets
-
-The project uses datasets consisting of different types of map environments:
-
-* Maps of **warehouse layouts**, for example the ones described in the [warehouse research dataset](http://example.com/warehouse-dataset).
-* Maps of **urban environments**, similar to those in the [city planning dataset](http://example.com/city-dataset).
-* A small custom dataset assembled from the TransPath_data dataset for to check the already written program code and preliminary experiments on a regular laptop
-
 ## Authors
 
 Short information about the repository authors:
