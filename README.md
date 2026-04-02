@@ -8,6 +8,15 @@ During the project, the following tasks should be completed:
 2. **Evaluate the developed approach** (1) on classical search algorithm such as Theta*.
 3. **Compare results using the metrics** from the original paper and additionally compare execution time of algorithms (or their combinations with neural networks) with the classical A* algorithm. The time-based metric is measured in percentage relative to classic A*.
 
+Animated presentation of algorithms:
+
+![theta_star](https://github.com/user-attachments/assets/8b66a987-8dc5-4971-99d3-d24d898fc582)
+Theta star
+![astar](https://github.com/user-attachments/assets/5eeeee33-acb7-42d5-906d-72d3066e5e85)
+A star
+![wastar](https://github.com/user-attachments/assets/11a79b2e-6b33-4293-86b6-16526e4dfd8b)
+WA star
+
 ## References
 
 Three main research works relevant to the project:
